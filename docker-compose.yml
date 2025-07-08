@@ -6,7 +6,7 @@ services:
       context: ./Backend
     container_name: leave-backend
     ports:
-      - "3889:3889"
+      - "3202:3202"
     environment:
       - DB_USER=postgres
       - DB_PASSWORD=admin123
@@ -20,7 +20,7 @@ services:
     image: postgres:14
     container_name: leave-db
     ports:
-      - "5980:5432"
+      - "5202:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin123
@@ -34,7 +34,7 @@ services:
       context: ./Employee-leave
     container_name: employee-leave-ui
     ports:
-      - "8117:80"
+      - "8004:80"
     depends_on:
       - backend
 
@@ -43,7 +43,7 @@ services:
       context: ./HR-leave
     container_name: hr-leave-ui
     ports:
-      - "8118:80"   # ✅ Updated from 8103 to 8118
+      - "8005:80"   # ✅ Updated from 8103 to 8118
     depends_on:
       - backend
 
